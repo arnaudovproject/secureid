@@ -1,0 +1,40 @@
+{
+  "name": "secureid",
+  "version": "1.0.0",
+  "description": "Secure authentication for managing small, medium and large projects. Write your applications with ease and great security.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/arnaudovproject/secureid.git"
+  },
+  "keywords": [
+    "auth",
+    "authentication",
+    "secure",
+    "crypt",
+    "hash",
+    "token",
+    "session",
+    "cookie",
+    "login",
+    "manage"
+  ],
+  "author": "Ventsislav Arnaudov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arnaudovproject/secureid/issues"
+  },
+  "homepage": "https://github.com/arnaudovproject/secureid#readme",
+  "devDependencies": {
+    "@types/cookie": "^0.6.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "cookie": "^0.6.0"
+  }
+}
