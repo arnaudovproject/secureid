@@ -33,11 +33,11 @@ export class Trust {
     const _SALT_256 = this.SALT_256;
     const _SALT_MIX = this.SALT_MIX.slice(-15);
 
-    const _METRIC = this.METRIC[4];
+    const _METRIC = this.METRIC[Math.floor(Math.random() * this.METRIC.length)];
 
     const _JTRACK = this.JTRACK.substring(8, 21);
 
-    const _DB_KEY = this.DB_KEY[9];
+    const _DB_KEY = this.DB_KEY[Math.floor(Math.random() * this.DB_KEY.length)];
 
     const _HASHED_MATRIX = this.HASHED_MATRIX;
 

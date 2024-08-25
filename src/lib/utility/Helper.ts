@@ -1,7 +1,6 @@
 import { parse as parseCookie, serialize as serializeCookie } from "cookie";
 import { createHash } from "crypto";
 import { Modul_3 } from "../config/keygen";
-import { HttpRequest } from "../interfaces/HttpRequestInterface";
 
 export class Helper {
   private secure: boolean;
@@ -19,10 +18,7 @@ export class Helper {
     return hash.digest("hex");
   }
 
-  public createCookie<T extends string>(
-    data: T,
-    res: { setHeader: (name: string, value: string) => void }
-  ): void {
+  public createCookie<T extends string>(data: T): string {
     const cookieOptions = {
       httpOnly: true,
       secure: this.secure,
@@ -36,12 +32,10 @@ export class Helper {
       cookieOptions
     );
 
-    res.setHeader("Set-Cookie", cookieData);
+    return cookieData;
   }
 
-  public checkCookieExists(req: HttpRequest): boolean {
-    const cookies = parseCookie(req.getHeader("Cookie") || "");
-    const sessionName = this.cryptSessionName();
-    return cookies.hasOwnProperty(sessionName);
+  public getCookieName(): string {
+    return this.cryptSessionName();
   }
 }
